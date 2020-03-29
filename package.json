@@ -23,12 +23,6 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
   "name": "magmel",
   "author": "Casprine Assempah",
   "module": "dist/magmel.esm.js",
