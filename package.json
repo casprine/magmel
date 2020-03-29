@@ -1,6 +1,9 @@
 {
   "version": "0.1.0",
   "license": "MIT",
+  "name": "magmel",
+  "author": "Casprine Assempah",
+  "module": "dist/magmel.esm.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -23,14 +26,23 @@
       "pre-commit": "tsdx lint && yarn test"
     }
   },
-  "name": "magmel",
-  "author": "Casprine Assempah",
-  "module": "dist/magmel.esm.js",
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "husky": "^4.2.3",
     "tsdx": "^0.13.1",
     "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "lint-staged": "^10.0.10",
+    "prettier": "^1.19.1"
+  },
+  "lint-staged": {
+    "*.(ts|tsx|js|jsx)": [
+      "prettier --ignore-path .eslintignore --single-quote --write",
+      "git add"
+    ],
+    "*.(json|css|scss|md)|.(babelrc|prettierrc|eslint.js|tsconfig.json)": [
+      "prettier --ignore-path .eslintignore --write",
+      "git add"
+    ]
   }
 }
