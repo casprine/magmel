@@ -13,14 +13,14 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test",
+    "test": "tsdx test --coverage",
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint && yarn test"
     }
   },
   "name": "magmel",
