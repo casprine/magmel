@@ -36,7 +36,7 @@ Let's say you want to use the `uniqueArray` utility
 ```js
 import { uniqueArray } from 'magmel';
 
-const Object = [
+const test = [
   { name: 'John', age: 10 },
   { name: 'Casprine', age: 10 },
   { name: 'Albert', age: 10 },
@@ -44,7 +44,7 @@ const Object = [
   { name: 'John', age: 10 },
 ];
 
-uniqueArray(Object);
+uniqueArray(test);
 
-// =>[ {name: "Albert", age: 10}  {name: "Casprine", age: 10} {name: "John", age: 10} ]
+// =>[{name: "Albert", age: 10}  {name: "Casprine", age: 10} {name: "John", age: 10}]
 ```

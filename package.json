@@ -16,7 +16,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --coverage",
+    "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
