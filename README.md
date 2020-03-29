@@ -1,27 +1,50 @@
-# TSDX Bootstrap
+<br />
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+<p align="center">
+  <a href="https://github.com/casprine/magmel">
+    <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/sparkles_2728.png" alt="magmel symbol" width="150" />
+  </a>
+</p>
 
-## Local Development
+<h1 align="center"> Delightful JavaScript utility library </h1>
 
-Below is a list of commands you will probably find useful.
+<p align="center">
+  <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/magmel"/>
+  <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/chakra-ui"/>  
+  <img alt="Spectrum" src="https://badgen.net/github/last-commit/casprine/magmel" />
+</p>
+<br />
 
-### `npm start` or `yarn start`
+## 🛠 Installation
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
+You can easily install this package with yarn or npm:
 
-<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
+```
+$ yarn add magmel
+```
 
-Your library will be rebuilt if you make edits.
+or
 
-### `npm run build` or `yarn build`
+```
+$ npm install --save magmel
+```
 
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
+## 📖 Usage
 
-<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
+Let's say you want to use the `uniqueArray` utility
 
-### `npm test` or `yarn test`
+```js
+import { uniqueArray } from 'magmel';
 
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+const Object = [
+  { name: 'John', age: 10 },
+  { name: 'Casprine', age: 10 },
+  { name: 'Albert', age: 10 },
+  { name: 'Albert', age: 10 },
+  { name: 'John', age: 10 },
+];
+
+uniqueArray(Object);
+
+// =>[ {name: "Albert", age: 10}  {name: "Casprine", age: 10} {name: "John", age: 10} ]
+```
