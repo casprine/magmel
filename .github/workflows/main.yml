@@ -21,9 +21,6 @@ jobs:
           restore-keys: |
             nodeModules-
 
-      - name: Publish to npm
-        uses: pascalgn/npm-publish-action@1.1.0
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
         env:
