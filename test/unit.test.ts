@@ -1,4 +1,4 @@
-import { uniqueArray, sortArray, isTypeOf } from '../src';
+import { uniqueArray, sortArray, isTypeOf, capitalize, replace } from '../src';
 import {
   dummyObject,
   uniqueDummyObject,
@@ -38,4 +38,28 @@ describe('isTypeOf', () => {
       expect(isTypeOf({ value, type })).toBe(expected);
     });
   }
+});
+
+describe('capitalize', () => {
+  it('Throws an error if no string is passed', () => {
+    expect(capitalize).toThrowError('The value provided is not a string');
+  });
+
+  it('Capitalise the first letter of every word', () => {
+    expect(capitalize('the quick brown fox jumps over the lazy dog')).toEqual(
+      'The Quick Brown Fox Jumps Over The Lazy Dog',
+    );
+  });
+});
+
+describe('replace', () => {
+  it('replaces a searchValue with a replacement', () => {
+    expect(
+      replace({
+        value: "You haven't left enough space between Pig and and and and and Whistle",
+        replacement: 'but',
+        searchValue: 'and',
+      }),
+    ).toEqual("You haven't left enough space between Pig but but but but but Whistle");
+  });
 });
