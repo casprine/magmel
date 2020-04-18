@@ -23,7 +23,7 @@
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint",
+      "pre-commit": "tsdx lint src test",
       "pre-push": "yarn test"
     }
   },

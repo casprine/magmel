@@ -1,6 +1,11 @@
 import isTypeOf from './isTypeOf';
 
-export default function chunkArray(array: Array<any>, size: number) {
+type chunkArrayArgs = {
+  array: Array<any>;
+  size: number;
+};
+
+export default function chunkArray({ array, size }: chunkArrayArgs) {
   const isArray = isTypeOf({ value: array, type: 'array' });
   const isNumber = isTypeOf({ value: size, type: 'number' });
 

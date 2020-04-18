@@ -1,4 +1,4 @@
-import { uniqueArray, sortArray, isTypeOf, capitalize, replace } from '../src';
+import { uniqueArray, sortArray, isTypeOf, capitalize, replace, chunkArray } from '../src';
 import {
   dummyObject,
   uniqueDummyObject,
@@ -6,10 +6,12 @@ import {
   dummyObjectInAscendingOrder,
   dummyObjectInDescendingOrder,
   isTypeOfTest,
+  largeArray,
+  largeArrayInSubsets,
 } from './dummyData';
 
 describe('uniquaArray', () => {
-  it('Throws an error if no array is passed', () => {
+  it('Throws an error if array is provided', () => {
     expect(uniqueArray).toThrowError('The value provided is not an array');
   });
 
@@ -46,7 +48,7 @@ describe('isTypeOf', () => {
   }
 });
 
-describe('capitalize', () => {
+describe('capitaxlize', () => {
   it('Throws an error if no string is passed', () => {
     expect(capitalize).toThrowError('The value provided is not a string');
   });
@@ -59,7 +61,7 @@ describe('capitalize', () => {
 });
 
 describe('replace', () => {
-  it('replaces a searchValue with a replacement', () => {
+  it('Replaces a searchValue with a replacement', () => {
     expect(
       replace({
         value: "You haven't left enough space between Pig and and and and and Whistle",
@@ -67,5 +69,15 @@ describe('replace', () => {
         searchValue: 'and',
       }),
     ).toEqual("You haven't left enough space between Pig but but but but but Whistle");
+  });
+});
+
+describe('chunkArray', () => {
+  it('Throws an error if array is provided', () => {
+    expect(chunkArray).toThrowError("Cannot read property 'array' of undefined");
+  });
+
+  it('Splits array into array with subsets of two', () => {
+    expect(chunkArray({ array: largeArray, size: 2 })).toStrictEqual(largeArrayInSubsets);
   });
 });

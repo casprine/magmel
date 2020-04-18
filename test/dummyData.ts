@@ -206,3 +206,12 @@ export const isTypeOfTest = [
     type: 'object',
   },
 ];
+
+export const largeArray = [1, 2, 45, 64, 2, 46, 431, '234', 'magmel', 'typescript'];
+export const largeArrayInSubsets = [
+  [1, 2],
+  [45, 64],
+  [2, 46],
+  [431, '234'],
+  ['magmel', 'typescript'],
+];
