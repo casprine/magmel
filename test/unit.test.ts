@@ -2,6 +2,7 @@ import { uniqueArray, sortArray, isTypeOf, capitalize, replace } from '../src';
 import {
   dummyObject,
   uniqueDummyObject,
+  uniqueDummyObjectByKey,
   dummyObjectInAscendingOrder,
   dummyObjectInDescendingOrder,
   isTypeOfTest,
@@ -14,6 +15,10 @@ describe('uniquaArray', () => {
 
   it('Returns an array of objects with only unqiue values', () => {
     expect(uniqueArray(dummyObject)).toEqual(uniqueDummyObject);
+  });
+
+  it('Returns an array of object unique by the name property', () => {
+    expect(uniqueArray(dummyObject, 'name')).toEqual(uniqueDummyObjectByKey);
   });
 });
 

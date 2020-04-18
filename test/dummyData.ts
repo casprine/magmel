@@ -25,6 +25,21 @@ export const uniqueDummyObject = [
   },
 ];
 
+export const uniqueDummyObjectByKey = [
+  {
+    name: 'casprine',
+    age: 3,
+  },
+  {
+    name: 'casprin',
+    age: 2,
+  },
+  {
+    name: 'desktop',
+    age: 12,
+  },
+];
+
 export const dummyObjectInAscendingOrder = [
   {
     name: 'casprin',
