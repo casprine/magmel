@@ -1,4 +1,4 @@
-import { uniqueArray, sortArray, isTypeOf, capitalize, replace, chunkArray } from '../src';
+import { uniqueArray, sortArray, isTypeOf, capitalize, replaceAll, chunkArray } from '../src';
 import {
   dummyObject,
   uniqueDummyObject,
@@ -11,29 +11,29 @@ import {
 } from './dummyData';
 
 describe('uniquaArray', () => {
-  it('Throws an error if array is provided', () => {
+  it('Should throws an error if no array is provided', () => {
     expect(uniqueArray).toThrowError('The value provided is not an array');
   });
 
-  it('Returns an array of objects with only unqiue values', () => {
+  it('Should returns an array of objects with only unqiue values', () => {
     expect(uniqueArray(dummyObject)).toEqual(uniqueDummyObject);
   });
 
-  it('Returns an array of object unique by the name property', () => {
+  it('Should returns an array of object unique by the name property', () => {
     expect(uniqueArray(dummyObject, 'name')).toEqual(uniqueDummyObjectByKey);
   });
 });
 
 describe('sortArray', () => {
-  it('Throws an error if no array is provided', () => {
+  it('Should throws an error if no array is provided', () => {
     expect(sortArray).toThrow();
   });
 
-  it('Sorts array by key in ascending order', () => {
+  it('Should sorts array by key in ascending order', () => {
     expect(sortArray({ array: dummyObject, key: 'age' })).toEqual(dummyObjectInAscendingOrder);
   });
 
-  it('Sorts array by key in descending order', () => {
+  it('Should sorts array by key in descending order', () => {
     expect(sortArray({ array: dummyObject, key: 'age', order: 'desc' })).toEqual(dummyObjectInDescendingOrder);
   });
 });
@@ -49,11 +49,11 @@ describe('isTypeOf', () => {
 });
 
 describe('capitaxlize', () => {
-  it('Throws an error if no string is passed', () => {
+  it('Should throws an error if no string is passed', () => {
     expect(capitalize).toThrowError('The value provided is not a string');
   });
 
-  it('Capitalise the first letter of every word', () => {
+  it('Should capitalise the first letter of every word', () => {
     expect(capitalize('the quick brown fox jumps over the lazy dog')).toEqual(
       'The Quick Brown Fox Jumps Over The Lazy Dog',
     );
@@ -61,9 +61,9 @@ describe('capitaxlize', () => {
 });
 
 describe('replace', () => {
-  it('Replaces a searchValue with a replacement', () => {
+  it('Should replace all occurence of searchValue with the replacement', () => {
     expect(
-      replace({
+      replaceAll({
         value: "You haven't left enough space between Pig and and and and and Whistle",
         replacement: 'but',
         searchValue: 'and',
@@ -73,11 +73,11 @@ describe('replace', () => {
 });
 
 describe('chunkArray', () => {
-  it('Throws an error if array is provided', () => {
+  it('Should throws an error if array is provided', () => {
     expect(chunkArray).toThrowError("Cannot read property 'array' of undefined");
   });
 
-  it('Splits array into array with subsets of two', () => {
+  it('Should splits array into array with subsets of two', () => {
     expect(chunkArray({ array: largeArray, size: 2 })).toStrictEqual(largeArrayInSubsets);
   });
 });

@@ -90,119 +90,119 @@ export const isTypeOfTest = [
   {
     value: {},
     expected: true,
-    name: 'Accepts an object and a type of object and returns true',
+    name: 'Should accept an object and a type of object and return true',
     type: 'object',
   },
 
   {
     value: {},
     expected: false,
-    name: 'Accepts an object and a type of array and returns false',
+    name: 'Should accept an object and a type of array and return false',
     type: 'array',
   },
 
   {
     value: [],
     expected: true,
-    name: 'Accepts an array and a type of array and returns true',
+    name: 'Should accept an array and a type of array and return true',
     type: 'array',
   },
 
   {
     value: 1243,
     expected: true,
-    name: 'Accepts an number and a type of number and returns true',
+    name: 'Should accept a number and a type of number and return true',
     type: 'number',
   },
 
   {
     value: 1243,
     expected: false,
-    name: 'Accepts an number and a type of symbol and returns false',
+    name: 'Should accept a number and a type of symbol and return false',
     type: 'symbol',
   },
 
   {
     value: 'Username',
     expected: true,
-    name: 'Accepts an string and a type of string and returns true',
+    name: 'Should accept a string and a type of string and return true',
     type: 'string',
   },
 
   {
     value: 'Username',
     expected: false,
-    name: 'Accepts an string and a type of function and returns false',
+    name: 'Should accept a string and a type of function and return false',
     type: 'function',
   },
 
   {
     value: true,
     expected: true,
-    name: 'Accepts an boolean and a type of boolean and returns true',
+    name: 'Should accept a boolean and a type of boolean and return true',
     type: 'boolean',
   },
 
   {
     value: false,
     expected: false,
-    name: 'Accepts an boolean and a type of number and returns false',
+    name: 'Should accept a boolean and a type of number and return false',
     type: 'number',
   },
 
   {
     value: Symbol(),
     expected: true,
-    name: 'Accepts an symbol and a type of symbol and returns true',
+    name: 'Should accept a symbol and a type of symbol and return true',
     type: 'symbol',
   },
 
   {
     value: Symbol(),
     expected: false,
-    name: 'Accepts an symbol and a type of string and returns false',
+    name: 'Should accept a symbol and a type of string and return false',
     type: 'string',
   },
 
   {
     value: undefined,
     expected: true,
-    name: 'Accepts an undefined and a type of undefined and returns true',
+    name: 'Should accept a undefined and a type of undefined and return true',
     type: 'undefined',
   },
 
   {
     value: undefined,
     expected: false,
-    name: 'Accepts an undefined and a type of function and returns false',
+    name: 'Should accept a undefined and a type of function and return false',
     type: 'function',
   },
 
   {
     value: () => {},
     expected: true,
-    name: 'Accepts an function and a type of function and returns true',
+    name: 'Should accept an function and a type of function and return true',
     type: 'function',
   },
 
   {
     value: () => {},
     expected: false,
-    name: 'Accepts an function and a type of object and returns false',
+    name: 'Should accept an function and a type of object and return false',
     type: 'object',
   },
 
   {
     value: null,
     expected: true,
-    name: 'Accepts an null and a type of null and returns true',
+    name: 'Should accept an null and a type of null and return true',
     type: 'null',
   },
 
   {
     value: null,
     expected: false,
-    name: 'Accepts an null and a type of object and returns false',
+    name: 'Should accept an null and a type of object and return false',
     type: 'object',
   },
 ];

@@ -1,12 +1,12 @@
 import isTypeOf from './isTypeOf';
 
-type replaceArgs = {
+type replaceAllArgs = {
   value: string;
   replacement: string;
   searchValue: string;
 };
 
-export default function replace({ value, replacement, searchValue }: replaceArgs): string {
+export default function replaceAll({ value, replacement, searchValue }: replaceAllArgs): string {
   const isString = isTypeOf({
     value,
     type: 'string',
