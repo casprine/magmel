@@ -1,6 +1,6 @@
 type isTypeOfArgs = {
   value: any;
-  type: string;
+  type: 'object' | 'array' | 'number' | 'string' | 'boolean' | 'bigint' | 'symbol' | 'null' | 'undefined' | 'function';
 };
 
 export default function isTypeOf({ value, type }: isTypeOfArgs) {
@@ -35,4 +35,3 @@ export default function isTypeOf({ value, type }: isTypeOfArgs) {
 
   return typeOf;
 }
-// 'object' | 'array' | 'number' | 'string' | 'boolean' | 'bigint' | 'symbol' | 'null' | 'undefined' | 'function';

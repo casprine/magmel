@@ -40,6 +40,7 @@ describe('isTypeOf', () => {
   for (let i = 0; i < isTypeOfTest.length; i++) {
     it(isTypeOfTest[i].name, () => {
       const { value, expected, type } = isTypeOfTest[i];
+      // @ts-ignore
       expect(isTypeOf({ value, type })).toBe(expected);
     });
   }
