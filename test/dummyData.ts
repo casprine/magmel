@@ -232,6 +232,13 @@ export const formatStringDataSet = [
   },
 
   {
+    value: '123456789',
+    pattern: 'XX.XX.XX',
+    showExcess: true,
+    expected: '12.34.56789',
+  },
+
+  {
     value: '12345678',
     pattern: 'XXXX/XX',
     showExcess: false,
