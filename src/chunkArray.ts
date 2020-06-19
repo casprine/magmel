@@ -7,10 +7,10 @@ type chunkArrayArgs = {
 
 export default function chunkArray({ array, size }: chunkArrayArgs) {
   const isArray = isTypeOf({ value: array, type: 'array' });
-  const isNumber = isTypeOf({ value: size, type: 'number' });
+  const isSizeNumber = isTypeOf({ value: size, type: 'number' });
 
   if (!isArray) throw new Error('The value provided is not an array');
-  if (!isNumber) throw new Error('The value provided is not a number');
+  if (!isSizeNumber) throw new Error('The value provided is not a number');
 
   const results: Array<any> = [];
 

@@ -1,4 +1,4 @@
-import { uniqueArray, sortArray, isTypeOf, capitalize, replaceAll, chunkArray } from '../src';
+import { uniqueArray, sortArray, isTypeOf, capitalize, replaceAll, chunkArray, formatString } from '../src';
 import {
   dummyObject,
   uniqueDummyObject,
@@ -8,10 +8,11 @@ import {
   isTypeOfTest,
   largeArray,
   largeArrayInSubsets,
+  formatStringDataSet,
 } from './dummyData';
 
 describe('uniquaArray', () => {
-  it('Should throws an error if no array is provided', () => {
+  it('Should throw an error if no array is provided', () => {
     expect(uniqueArray).toThrowError('The value provided is not an array');
   });
 
@@ -25,7 +26,7 @@ describe('uniquaArray', () => {
 });
 
 describe('sortArray', () => {
-  it('Should throws an error if no array is provided', () => {
+  it('Should throw an error if no array is provided', () => {
     expect(sortArray).toThrow();
   });
 
@@ -48,8 +49,8 @@ describe('isTypeOf', () => {
   }
 });
 
-describe('capitaxlize', () => {
-  it('Should throws an error if no string is passed', () => {
+describe('capitalize', () => {
+  it('Should throw an error if no string is passed', () => {
     expect(capitalize).toThrowError('The value provided is not a string');
   });
 
@@ -73,11 +74,24 @@ describe('replace', () => {
 });
 
 describe('chunkArray', () => {
-  it('Should throws an error if array is provided', () => {
+  it('Should throw an error if array is not provided', () => {
     expect(chunkArray).toThrowError("Cannot read property 'array' of undefined");
   });
 
   it('Should splits array into array with subsets of two', () => {
     expect(chunkArray({ array: largeArray, size: 2 })).toStrictEqual(largeArrayInSubsets);
   });
+});
+
+describe('formatString', () => {
+  it('Should throw an error if type of value is not a string', () => {
+    expect(formatString).toThrow("Cannot read property 'value' of undefined");
+  });
+
+  for (let i = 0; i < formatStringDataSet.length; i++) {
+    it(`Should format ${formatStringDataSet[i].value} with ${formatStringDataSet[i].pattern}  = ${formatStringDataSet[i].expected}`, () => {
+      const { value, expected, pattern, showExcess } = formatStringDataSet[i];
+      expect(formatString({ value, showExcess, pattern })).toBe(expected);
+    });
+  }
 });

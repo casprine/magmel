@@ -215,3 +215,33 @@ export const largeArrayInSubsets = [
   [431, '234'],
   ['magmel', 'typescript'],
 ];
+
+export const formatStringDataSet = [
+  {
+    value: '12345678',
+    pattern: 'XX-XX-XX',
+    showExcess: false,
+    expected: '12-34-56',
+  },
+
+  {
+    value: '12345678',
+    pattern: 'XX.XX.XX',
+    showExcess: false,
+    expected: '12.34.56',
+  },
+
+  {
+    value: '12345678',
+    pattern: 'XXXX/XX',
+    showExcess: false,
+    expected: '1234/56',
+  },
+
+  {
+    value: '12345678',
+    pattern: 'XXXX XX XX',
+    showExcess: false,
+    expected: '1234 56 78',
+  },
+];
